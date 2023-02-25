@@ -1,6 +1,5 @@
 package com.microservices.currencyexchangeservice.model;
 
-import com.microservices.currencyexchangeservice.enums.Currency;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -17,13 +16,13 @@ import java.math.BigDecimal;
 public class CurrencyExchange {
     @Id
     private Long id;
-    private Currency givenCurrency;
-    private Currency targetCurrency;
+    private String givenCurrency;
+    private String targetCurrency;
     private BigDecimal conversionMultiple;
     @Transient
     private String environment;
 
-    public CurrencyExchange(Long id, Currency givenCurrency, Currency targetCurrency, BigDecimal conversionMultiple) {
+    public CurrencyExchange(Long id, String givenCurrency, String targetCurrency, BigDecimal conversionMultiple) {
         this.id = id;
         this.givenCurrency = givenCurrency;
         this.targetCurrency = targetCurrency;

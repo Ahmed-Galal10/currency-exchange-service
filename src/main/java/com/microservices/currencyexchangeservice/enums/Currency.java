@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor
 public enum Currency {
-    USD, EGP;
+    USD, EUR, AED, EGP;
 
     private String currency;
 
