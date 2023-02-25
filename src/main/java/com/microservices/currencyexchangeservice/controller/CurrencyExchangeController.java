@@ -14,13 +14,13 @@ import java.math.BigDecimal;
 @RestController
 @RequestMapping("/currency-exchange")
 public class CurrencyExchangeController {
-    
+
     @Autowired
     private Environment environment;
 
     @GetMapping("/from/{givenCurrency}/to/{targetCurrency}")
     public CurrencyExchange getExchangeValue(@PathVariable String givenCurrency,
-                                             @PathVariable String targetCurrency){
+                                             @PathVariable String targetCurrency) {
         CurrencyExchange currencyExchange = new CurrencyExchange(1L, Currency.USD, Currency.EGP, BigDecimal.valueOf(30));
         String port = environment.getProperty("server.port");
         currencyExchange.setEnvironment(port);
